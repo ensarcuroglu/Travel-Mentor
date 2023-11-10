@@ -52,6 +52,7 @@ namespace Travel_Mentor
             else
             {
                 MessageBox.Show("Kullanıcı Adı hatalı. Lütfen tekrar deneyiniz.");
+                clearText();
             }
 
         }
