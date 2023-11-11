@@ -9,6 +9,9 @@ namespace Travel_Mentor
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Login_Screen login_Screen = new Login_Screen();
+            welcomeLabel.Text = "Welcome, " + login_Screen.user_name;
+
 
         }
 

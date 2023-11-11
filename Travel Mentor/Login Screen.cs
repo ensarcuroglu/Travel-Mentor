@@ -27,7 +27,7 @@ namespace Travel_Mentor
         }
 
 
-        string user_name = "ensarcuroglu";
+        public string user_name = "ensarcuroglu";
         string password = "Ensar123";
         
         void clearText()

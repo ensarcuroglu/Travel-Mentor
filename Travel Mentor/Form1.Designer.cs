@@ -54,12 +54,12 @@
             this.label13 = new System.Windows.Forms.Label();
             this.numberopeopBox = new System.Windows.Forms.ComboBox();
             this.budgetBox = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.welcomeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -289,16 +289,6 @@
             this.budgetBox.Size = new System.Drawing.Size(151, 28);
             this.budgetBox.TabIndex = 33;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(433, 9);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(287, 35);
-            this.label14.TabIndex = 34;
-            this.label14.Text = "Welcome, @user_name";
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -349,17 +339,27 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Suggestion 4";
             // 
+            // welcomeLabel
+            // 
+            this.welcomeLabel.AutoSize = true;
+            this.welcomeLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.welcomeLabel.Location = new System.Drawing.Point(527, 24);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(287, 35);
+            this.welcomeLabel.TabIndex = 38;
+            this.welcomeLabel.Text = "Welcome, @user_name";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1630, 982);
+            this.Controls.Add(this.welcomeLabel);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.budgetBox);
             this.Controls.Add(this.numberopeopBox);
             this.Controls.Add(this.label13);
@@ -422,11 +422,11 @@
         private Label label13;
         private ComboBox numberopeopBox;
         private ComboBox budgetBox;
-        private Label label14;
         private Label label15;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
         private GroupBox groupBox3;
         private GroupBox groupBox4;
+        private Label welcomeLabel;
     }
 }
