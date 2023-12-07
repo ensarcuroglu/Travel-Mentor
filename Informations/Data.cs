@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Informations
+
+namespace Informations 
 {
     public class Data
     {
@@ -16,7 +17,7 @@ namespace Informations
             };
             return itemsLocation;
         }
-
+        
 
 
         public List<string> GetPeopleItems()
@@ -57,7 +58,7 @@ namespace Informations
             };
             return itemsHoliType;
         }
-
+        public List<string> itemsAccomType = new List<string>();
         public List<string> GetAccomTypeItems()
         {
             List<string> itemsAccomType = new List<string>()
