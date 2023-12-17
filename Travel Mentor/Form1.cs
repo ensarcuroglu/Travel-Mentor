@@ -1,4 +1,3 @@
-using Informations;
 using MyProject.Services;
 using System.Security.Cryptography.X509Certificates;
 
@@ -9,10 +8,15 @@ namespace Travel_Mentor
         public Form1()
         {
             InitializeComponent();
-            kullanýcý = new Kullanýcý();
+            user = new User();
         }
 
-        private Kullanýcý kullanýcý;
+        private User user;
+
+        private void AddItemsToComboBox(ComboBox comboBox, string[] items)
+        {
+            comboBox.Items.AddRange(items);
+        }
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -20,44 +24,61 @@ namespace Travel_Mentor
             Login_Screen login_Screen = new Login_Screen();
             welcomeLabel.Text = "Welcome, " + login_Screen.user_name;
             
-            Data data = new Data();
-
             
 
-            // Location Items Added
-            List<string> itemsLocation = data.GetLocationItems();
-            locationBox.Items.AddRange(itemsLocation.ToArray());
+            string[] locationItems = {"Bodrum", "Dalaman", "Akyaka", "Marmaris", "Fethiye" };
 
-            // Location Items Added
-            List<string> itemsPeople = data.GetPeopleItems();
-            numberPeopleBox.Items.AddRange(itemsPeople.ToArray());
+            string[] peopleItems = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
 
-            // Holiday Type Added
-            List<string> itemsHoliType = data.GetHoliTypeItems();
-            holiTypeBox.Items.AddRange(itemsHoliType.ToArray());
+            string[] holiTypeItems =
+                {
+                "Beach Holiday",
+                "Mountain Holiday",
+                "Cultural Holiday",
+                "Adventure Trip",
+                "Winter Vacation",
+                "Nature Getaway",
+                "Culinary Tour",
+                "Camping Adventure",
+                "Hiking and Trekking Expedition",
+                "Honeymoon Getaway",
+                "Family Vacation",
+                "Romantic Escape",
+                "Discovery Vacation"};
 
-            // Accommodation Type Added
-            List<string> itemsAccomType = data.GetAccomTypeItems();
-            accomTypeBox.Items.AddRange(itemsAccomType.ToArray());
+            string[] transTypeItems =
+                {
+                "Car",
+                "Taxi",
+                "Train",
+                "Bus",
+                "Plane",
+                "Ship",
+                "Rental Car"};
 
-            // Transportation Type Added
-            List<string> itemsTransType = data.GetTransTypeItems();
-            transTypeBox.Items.AddRange(itemsTransType.ToArray());
+            string[] withWhoItems =
+                {
+                "Family",
+                "Friends",
+                "Spouse or Partner"};
 
-            // Activity Added
-            List<string> itemsActivity = data.GetActivityItems();
-            activityListBox.Items.AddRange(itemsActivity.ToArray());
+            string[] weaPreferItems =
+                {
+                "Sunny",
+                "Partly Cloudy",
+                "Cloudy",
+                "Rainy",
+                "Karlý"};
 
-            // With Whom Added
-            List<string> itemsWithWho = data.GetWithWhoItems();
-            withWhoBox.Items.AddRange(itemsWithWho.ToArray());
-
-            // Weather Prefer Added
-            List<string> itemsWeaPrefer = data.GetWeaPrefer();
-            weaPreferBox.Items.AddRange(itemsWeaPrefer.ToArray());
+            AddItemsToComboBox(numberPeopleBox, peopleItems);
+            AddItemsToComboBox(locationBox, locationItems);
+            AddItemsToComboBox(holiTypeBox, holiTypeItems);
+            AddItemsToComboBox(transTypeBox, transTypeItems);
+            AddItemsToComboBox(withWhoBox, withWhoItems);
+            AddItemsToComboBox(weaPreferBox, weaPreferItems);
 
         }
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -67,7 +88,7 @@ namespace Travel_Mentor
         {
             if (numberPeopleBox.SelectedItem != null)
             {
-                kullanýcý.numberPeopleBoxPrefer = int.Parse(numberPeopleBox.SelectedItem.ToString());
+                user.numberPeopleBoxPrefer = int.Parse(numberPeopleBox.SelectedItem.ToString());
             }
             
 
@@ -77,39 +98,24 @@ namespace Travel_Mentor
         {
             if(holiTypeBox.SelectedItem != null)
             {
-                kullanýcý.holiholiTypeBoxPrefer = holiTypeBox.Text;            
+                user.holiholiTypeBoxPrefer = holiTypeBox.Text;            
             }                    
         
-        }
-
-        private void accomTypeBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           if(accomTypeBox.SelectedItem != null)
-            {
-                kullanýcý.accomTypeBoxPrefer = accomTypeBox.Text;
-            }
-                        
         }
 
         private void transTypeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(transTypeBox.SelectedItem != null)
             {
-                kullanýcý.transTypeBoxPrefer = transTypeBox.Text;
+                user.transTypeBoxPrefer = transTypeBox.Text;
             }    
                      
         }
-
-        private void activityListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // YAPILACAK !!
-        }
-
         private void withWhoBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (withWhoBox.SelectedItem != null)
             {
-                kullanýcý.withWhoBoxPrefer = withWhoBox.Text;
+                user.withWhoBoxPrefer = withWhoBox.Text;
             }
             
         }
@@ -118,18 +124,37 @@ namespace Travel_Mentor
         {
             if (weaPreferBox.SelectedItem != null)
             {
-                kullanýcý.weaPreferBoxPrefer = weaPreferBox.Text;
+                user.weaPreferBoxPrefer = weaPreferBox.Text;
             }
             
         }
 
+        private void locationBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (locationBox.SelectedItem != null)
+            {
+                user.locationBoxPrefer = locationBox.Text;
+            }
+        }
+
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            Deneme deneme = new Deneme(user);
             Data data = new Data();
-            Deneme deneme = new Deneme(kullanýcý,data);
-            deneme.BilgileriAl();          
-            kullanýcý.Budget = int.Parse(txtBudget.Text);
-            test.Text = kullanýcý.Budget.ToString();
+
+            if (txtBudget != null && int.TryParse(txtBudget.Text, out int budgetValue))
+            {
+                user.Budget = int.Parse(txtBudget.Text);
+            }
+            else
+            {
+                MessageBox.Show("Bakiye'yi hatalý girdiniz.");
+            }
+
+            deneme.BilgileriAl();
+            string result = deneme.TercihlereGoreCevap();
+            string gelenotel = data.GetOtel();
+            txtTest.Text = gelenotel + user.Budget;
 
         }
     }

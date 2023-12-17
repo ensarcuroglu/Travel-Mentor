@@ -5,9 +5,7 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Travel Mentor", "Travel Mentor\Travel Mentor.csproj", "{33E6F015-05E4-4CDA-BE07-26ECED546113}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Informations", "Informations\Informations.csproj", "{84BAB4EB-B4F4-43A7-BBF0-B70F819E73F9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProject.Services", "MyProject.Services\MyProject.Services.csproj", "{5CB60F08-FD21-43E8-BE77-E06BF6FD123F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProject.Services", "MyProject.Services\MyProject.Services.csproj", "{5CB60F08-FD21-43E8-BE77-E06BF6FD123F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{33E6F015-05E4-4CDA-BE07-26ECED546113}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33E6F015-05E4-4CDA-BE07-26ECED546113}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33E6F015-05E4-4CDA-BE07-26ECED546113}.Release|Any CPU.Build.0 = Release|Any CPU
-		{84BAB4EB-B4F4-43A7-BBF0-B70F819E73F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{84BAB4EB-B4F4-43A7-BBF0-B70F819E73F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{84BAB4EB-B4F4-43A7-BBF0-B70F819E73F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{84BAB4EB-B4F4-43A7-BBF0-B70F819E73F9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5CB60F08-FD21-43E8-BE77-E06BF6FD123F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5CB60F08-FD21-43E8-BE77-E06BF6FD123F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CB60F08-FD21-43E8-BE77-E06BF6FD123F}.Release|Any CPU.ActiveCfg = Release|Any CPU

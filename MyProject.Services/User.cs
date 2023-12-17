@@ -9,24 +9,19 @@ namespace MyProject.Services
 {
     
 
-    public class Kullanıcı : BaseClass
+    public class User 
     {
         public int Budget { get; set; }
         public int numberPeopleBoxPrefer { get; set; }
         public string holiholiTypeBoxPrefer { get; set; }
-        public string accomTypeBoxPrefer { get; set; }
         public string transTypeBoxPrefer { get; set; }
         public string activityListBoxPrefer { get; set; }
         public string withWhoBoxPrefer { get; set; }
         public string weaPreferBoxPrefer { get; set; }
+        public string locationBoxPrefer { get; set; }
 
 
         
-
-
-
-
-
 
 
 

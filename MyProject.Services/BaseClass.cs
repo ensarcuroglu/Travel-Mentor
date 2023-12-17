@@ -2,14 +2,15 @@
 
 namespace MyProject.Services
 {
-    public class BaseClass
+    abstract class BaseClass
     {
-        
-        
-        
-        
+
         
 
         
+
+        
+
+
     }
 }
